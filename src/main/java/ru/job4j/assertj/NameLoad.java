@@ -1,8 +1,6 @@
 package ru.job4j.assertj;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class NameLoad {
@@ -19,7 +17,7 @@ public class NameLoad {
                 .collect(Collectors.toMap(
                         e -> e[0],
                         e -> e[1],
-                        "%s+%s"::formatted
+                        (first, second) -> "%s+%s".formatted(first, second)
                 )));
     }
 
