@@ -24,7 +24,7 @@ class NameLoadTest {
     }
 
     @Test
-    void whenValidateThenFirstException () {
+    void whenValidateThenFirstException() {
         NameLoad nameLoad = new NameLoad();
         String argKeyValueError = "key:value";
         assertThatThrownBy(() -> nameLoad.parse(argKeyValueError))
@@ -36,7 +36,7 @@ class NameLoadTest {
     }
 
     @Test
-    void whenValidateThenSecondException () {
+    void whenValidateThenSecondException() {
         NameLoad nameLoad = new NameLoad();
         String argKeyValueError = "=key=value";
         assertThatThrownBy(() -> nameLoad.parse(argKeyValueError))
@@ -47,7 +47,7 @@ class NameLoadTest {
     }
 
     @Test
-    void whenValidateThenThirdException () {
+    void whenValidateThenThirdException() {
         NameLoad nameLoad = new NameLoad();
         String argKeyValueError = "key=";
         assertThatThrownBy(() -> nameLoad.parse(argKeyValueError))
