@@ -1,7 +1,5 @@
 package ru.job4j.list.forwardlinkedlist;
 
-import ru.job4j.list.linkedlist.SimpleLinkedList;
-
 import java.util.ConcurrentModificationException;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -25,6 +23,12 @@ public class ForwardLinked<T> implements Iterable<T> {
             l.next = newNode;
         }
         size++;
+    }
+
+    public void addFirst(T value) {
+        modCount++;
+        Node<T> f = head;
+        head = new Node<>(value, f);
     }
 
     public T get(int index) {
