@@ -31,8 +31,12 @@ public class User {
 
     @Override
     public boolean equals(Object object) {
-        if (this == object) return true;
-        if (object == null || getClass() != object.getClass()) return false;
+        if (this == object) {
+            return true;
+        }
+        if (object == null || getClass() != object.getClass()) {
+            return false;
+        }
 
         User user = (User) object;
         return children == user.children && Objects.equals(name, user.name) && Objects.equals(birthday, user.birthday);
@@ -51,7 +55,7 @@ public class User {
         User first = new User("obito", 1, now);
         User second = new User("obito", 1, now);
 
-       int firstHashCode = first.hashCode();
+        int firstHashCode = first.hashCode();
         int firstHash = firstHashCode ^ (firstHashCode >>> 16);
         int firstBucket = firstHash & 15;
 
