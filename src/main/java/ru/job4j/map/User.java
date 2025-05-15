@@ -3,6 +3,7 @@ package ru.job4j.map;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class User {
 
@@ -28,12 +29,29 @@ public class User {
         return birthday;
     }
 
+    @Override
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+
+        User user = (User) object;
+        return children == user.children && Objects.equals(name, user.name) && Objects.equals(birthday, user.birthday);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(name);
+        result = 31 * result + children;
+        result = 31 * result + Objects.hashCode(birthday);
+        return result;
+    }
+
     public static void main(String[] args) {
         Calendar now = Calendar.getInstance();
         User first = new User("obito", 1, now);
         User second = new User("obito", 1, now);
 
-        int firstHashCode = first.hashCode();
+       int firstHashCode = first.hashCode();
         int firstHash = firstHashCode ^ (firstHashCode >>> 16);
         int firstBucket = firstHash & 15;
 
@@ -46,6 +64,5 @@ public class User {
         map.put(second, new Object());
 
         map.forEach((user, object) -> System.out.println(user + " " + object));
-
     }
 }
