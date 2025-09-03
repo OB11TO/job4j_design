@@ -1,4 +1,4 @@
-package ru.job4j.leetcode.two_pointer;
+package ru.job4j.leetcode.twopointer;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -38,14 +38,14 @@ class ReverseVowelsStringTest {
     @ParameterizedTest(name = "\"{0}\" -> \"{1}\"")
     @MethodSource("provideInputsForReverseVowels")
     @DisplayName("reverseVowels: различные входы -> ожидаемый результат")
-    void reverseVowels_variousInputs_returnsExpected(String input, String expected) {
+    void reverseVowelsVariousInputsReturnsExpected(String input, String expected) {
         String actual = solver.reverseVowels(input);
         assertThat(actual).isEqualTo(expected);
     }
 
     @Test
     @DisplayName("reverseVowels: смешанный регистр гласных корректно обрабатывается")
-    void reverseVowels_mixedCase_returnsCorrect() {
+    void reverseVowelsMixedCaseReturnsCorrect() {
         String input = "AbEoU";
         String expected = "UboEA";
         String actual = solver.reverseVowels(input);
@@ -54,7 +54,7 @@ class ReverseVowelsStringTest {
 
     @Test
     @DisplayName("reverseVowels: при null бросает NullPointerException")
-    void reverseVowels_null_throwsNullPointerException() {
+    void reverseVowelsNullThrowsNullPointerException() {
         assertThatThrownBy(() -> solver.reverseVowels(null))
                 .isInstanceOf(NullPointerException.class)
                 .hasMessageContaining("null");

@@ -1,4 +1,4 @@
-package ru.job4j.leetcode.two_pointer;
+package ru.job4j.leetcode.twopointer;
 
 public class ReverseString {
 

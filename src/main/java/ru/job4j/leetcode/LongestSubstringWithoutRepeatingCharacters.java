@@ -18,7 +18,7 @@ public class LongestSubstringWithoutRepeatingCharacters {
             char c = s.charAt(right);
 
             if (map.containsKey(c)) {
-                left = Math.max(left ,map.get(c) + 1);
+                left = Math.max(left, map.get(c) + 1);
             }
 
             map.put(c, right);
