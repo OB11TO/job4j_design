@@ -1,6 +1,7 @@
 package ru.job4j.leetcode;
 
 import org.junit.jupiter.api.Test;
+import ru.job4j.leetcode.twopointer.SmallestRangeFinder;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

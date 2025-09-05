@@ -1,4 +1,4 @@
-package ru.job4j.leetcode;
+package ru.job4j.leetcode.twopointer;
 
 import java.util.HashMap;
 import java.util.Map;
