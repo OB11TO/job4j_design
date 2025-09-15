@@ -81,7 +81,7 @@ class T3SumTest {
     @Test
     @DisplayName("Когда все нули в массиве")
     void whenForElementArrayZero() {
-        int[] nums = {0,0,0,0};
+        int[] nums = {0, 0, 0, 0};
         List<List<Integer>> result = solver.threeSum(nums);
         assertThat(result).containsExactly(List.of(0, 0, 0));
     }

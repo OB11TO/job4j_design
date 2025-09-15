@@ -33,7 +33,7 @@ class PartitionLabelsTest {
 
         assertThat(result)
                 .contains(
-                        9,7,8
+                        9, 7, 8
                 );
     }
 
